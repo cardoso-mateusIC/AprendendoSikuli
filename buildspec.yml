@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - mkdir /root/.m2
+      - cp ./settings.xml /root/.m2/
+      - apt-get update
+      - apt-get install git -y
+      - git config --global user.email "diogo.nocera@intuitivecare.com"
+      - git config --global user.name "CodePipeline AWS"
+      - eval $(ssh-agent)
+      - mkdir ~/.ssh
+      - cp ./id_rsa ~/.ssh/
+      - chmod 600 ~/.ssh/id_rsa
+      - ssh-add ~/.ssh/id_rsa
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - ls
+    
+      # Upgrade AWS CLI to the latest version
+      # - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - echo Test started on `date`
+      # - mvn clean compile test
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean deploy

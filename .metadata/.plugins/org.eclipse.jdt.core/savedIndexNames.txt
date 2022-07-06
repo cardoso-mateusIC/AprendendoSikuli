@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Repos\IntuitiveCare\aprendendo-sikuli\.metadata\.plugins\org.eclipse.jdt.core

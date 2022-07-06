@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+        <server>
+            <id>testeTemplate</id>
+            <username>DNocera</username>
+            <password>ZGlvbmFsMDU=</password>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Authorization</name>
+                        <!-- Base64-encoded "<username>:<password>" -->
+                        <!--<value>Basic "RE5vY2VyYTpmZTJkMWZkYzkxNmY4YWIzMTcwMjVmZjhjOTIzOGY4YWE4M2UxZjg2"</value>-->
+                        
+                        <!-- <value>Basic "RE5vY2VyYTpxemNhVWFkbjJuTERLd21zVTdmOA=="</value> -->
+                        <value>Basic "RE5vY2VyYToyOWVjZjhiMWQ0MDE2OGI3NWNkN2JjM2MzZWM2ZDIwNGYzZjBmMzdl"</value>
+                        <!-- NO BIT https://bitbucket.org/account/settings/app-passwords/ criar uma app password e fazer encode64 de <username>:<app-password> -->
+                            <!--JW5vtThywuM3JuQxqeSG -->
+                    </property>
+                </httpHeaders>
+            </configuration>  
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>repositorioProfile</id>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>synergian-repo</id>
+                    <url>https://raw.github.com/synergian/wagon-git/releases</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <repositories>
+                <repository>
+                    <id>testeTemplate</id>
+                    <url>https://raw.githubusercontent.com/IntuitiveCare/ic-maven-repo/master</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    
+    <activeProfiles>
+        <activeProfile>repositorioProfile</activeProfile>
+    </activeProfiles>
+          
+</settings>
